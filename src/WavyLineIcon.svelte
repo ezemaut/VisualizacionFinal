@@ -1,7 +1,8 @@
 <!-- WavyLineIcon.svelte -->
 <script>
-    export const size = 64;
+    export let size = 64;
     export let color = "#e86c1d"; // naranja oscuro
+    export let style = "";
   </script>
   
   <svg
@@ -10,6 +11,7 @@
     width={size}
     height={size}
     fill="none"
+    style={style}
   >
     <path
       d="M10 0

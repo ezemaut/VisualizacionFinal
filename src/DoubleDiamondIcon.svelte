@@ -3,14 +3,16 @@
   export let size = 64;
   export let color1 = "#add8e6"; // celeste claro
   export let color2 = "#1565c0"; // azul fuerte
+  export let style = "";
 </script>
 
 <svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 100 100"
-  width={size}
-  height={size}
-  fill="none"
+xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 100 100"
+width={size}
+height={size}
+fill="none"
+style={style}
 >
   <!-- Primer rombo -->
   <rect

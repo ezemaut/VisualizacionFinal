@@ -28,6 +28,34 @@
   overflow: hidden;
 }
 
+
+.colab-box-BIG {
+  position: relative;  /* esta línea es clave para que los hijos absolute se posicionen dentro */
+  background-color: black;
+  border: 5px solid;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 280px;
+  height: 280px;
+  overflow: hidden;
+}
+
+
+.icon-layer-BIG {
+  position: relative; /* crucial for children with position:absolute */
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.icon-item-BIG {
+  position: absolute;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+
+
 .icon-grid {
   display: flex;
   flex-wrap: wrap;
