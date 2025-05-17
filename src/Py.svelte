@@ -19,7 +19,7 @@
          C80 80, 60 90, 40 80
          C35 80, 0  40, -20  90"
       stroke={color}
-      stroke-width="14"
+      stroke-width="10"
       stroke-linecap="round"
       stroke-linejoin="round"
       fill="none"

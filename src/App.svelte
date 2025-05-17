@@ -1,112 +1,209 @@
 <script>
-  import SpiralIcon from './SpiralIcon.svelte';
+  import JavaScript from './JavaScript.svelte';
   import DoubleDiamondIcon from './DoubleDiamondIcon.svelte';
-  import ZigzagIcon from './ZigzagIcon.svelte';
+  import CSS from './CSS.svelte';
   import C from './C.svelte';
-  import BrushZIcon from './BrushZIcon.svelte';
+  import Svelte from './Svelte.svelte';
   import Python from './Py.svelte';
   import SemiArcsIcon from './SemiArcsIcon.svelte';
   import WavyLineIcon from './WavyLineIcon.svelte';
+  import WavyLineIcon2 from './WavyLineIcon.svelte';
+  import WavyLineIcon3 from './WavyLineIcon.svelte';
+  import WavyLineIcon4 from './WavyLineIcon.svelte';
   import StarIcon from './StarIcon.svelte';
-  import LoopyStrokeIcon from './LoopyStrokeIcon.svelte';
-  import AbstractBlobIcon from './AbstractBlobIcon.svelte';
+  import Html from './Html.svelte';
+  import Cmasmas from './Cmasmas.svelte';
 
   const iconComponents = {
-    SpiralIcon,
+    JavaScript,
     DoubleDiamondIcon,
-    ZigzagIcon,
+    CSS,
     C,
-    BrushZIcon,
+    Svelte,
     Python,
     SemiArcsIcon,
     WavyLineIcon,
+    WavyLineIcon2,
+    WavyLineIcon3,
+    WavyLineIcon4,
     StarIcon,
-    LoopyStrokeIcon,
-    AbstractBlobIcon
+    Html,
+    Cmasmas
   };
 
 /*  
 Combinaciones:
-javascript, css, svelte   -> 'ZigzagIcon', 'SpiralIcon', 'BrushZIcon'
-html  -> 'AbstractBlobIcon'
-python, css, html  -> 'Python', 'SpiralIcon', 'AbstractBlobIcon'
-python, html  -> 'Python', 'AbstractBlobIcon'
+JavaScript, CSS, svelte   -> 'CSS', 'JavaScript', 'Svelte'
+Html  -> 'Cmasmas'
+python, CSS, Html  -> 'Python', 'JavaScript', 'Cmasmas'
+python, Html  -> 'Python', 'Cmasmas'
 python  -> 'Python',
-python, c++  -> 'Python', 'LoopyStrokeIcon'
+python, c++  -> 'Python', 'Html'
 python, c  -> 'Python', 'C'
 c  -> 'C'
 
-'SpiralIcon',   javascript    
+'JavaScript',   JavaScript    
 'DoubleDiamondIcon', 
-'ZigzagIcon',         css 
+'CSS',         CSS 
 'C',              
-'BrushZIcon',        svelete
+'Svelte',        Svelte
 'Python',          
 'SemiArcsIcon',        
-'LoopyStrokeIcon',   html
-'AbstractBlobIcon'   c++
+'Html',   Html
+'Cmasmas'   c++
 
 'WavyLineIcon',   peso   
 'StarIcon',       commit   
 */
 
 const iconLayout = {
-  SpiralIcon:        { x: '80%', y: '0%',    zIndex: 2, scale: 4},
+  JavaScript:        { x: '45%', y: '0%',    zIndex: 2, scale: 4},
   DoubleDiamondIcon: { x: '15%',  y: '50%',  zIndex: 1, scale: 1.5 },
-  ZigzagIcon:        { x: '15%',  y: '75%',  zIndex: 3, scale: 5 },
-  C:                 { x: '53%',  y: '50%',  zIndex: 2, scale: 6},
-  BrushZIcon:        { x: '80%',  y: '95%',   zIndex: 0, scale: 8.2 },
-  Python:            { x: '67%',  y: '50%',  zIndex: 0, scale: 7 },
+  CSS:               { x: '30%',  y: '75%',  zIndex: 3, scale: 5 },
+  C:                 { x: '50%',  y: '50%',  zIndex: 2, scale: 6},
+  Svelte:        { x: '80%',  y: '95%',   zIndex: 0, scale: 8.2 },
+  Python:            { x: '34%',  y: '50%',  zIndex: 0, scale: 7 },
   SemiArcsIcon:      { x: '90%',  y: '85%',  zIndex: 2, scale: 1.5 },  // big one!
-  WavyLineIcon:      { x: '50%',  y: '80%',  zIndex: 0, scale: 1.5 },
-  StarIcon:          { x: '15%',  y: '15%',  zIndex: 3, scale: 1.5 },
-  LoopyStrokeIcon:   { x: '45%',   y: '45%',  zIndex: 2, scale: 8 },
-  AbstractBlobIcon:  { x: '35%',   y: '60%',   zIndex: 1, scale: 5 }
+  Html:               { x: '90%',   y: '70%',  zIndex: 2, scale: 6 },
+  Cmasmas:          { x: '40%',   y: '40%',   zIndex: 1, scale: 7 },
+
+  StarIcon:          { x: '85%',  y: '15%',  zIndex: 3, scale: 1.5 },
+  WavyLineIcon:       { x: '0%',  y: '50%',  zIndex: 20, scale: 6 },
+  WavyLineIcon2:      { x: '5%',  y: '50%',  zIndex: 20, scale: 6 },
+  WavyLineIcon3:      { x: '10%',  y: '50%',  zIndex: 20, scale: 6 },
+  WavyLineIcon4:      { x: '15%',  y: '50%',  zIndex: 20, scale: 6 },
 };
 
 
 let todos = [
    {  nombre: 'Spotify Skip',
       gusto: true,
-      iconos: ['StarIcon','SpiralIcon', 'ZigzagIcon', 'BrushZIcon']
+      starScale: 1,
+      iconos: ['StarIcon','JavaScript', 'CSS', 'Svelte',
+        'WavyLineIcon', 'WavyLineIcon2','WavyLineIcon3','WavyLineIcon4',
+      ]
     },
 
    {  nombre: '',
       gusto: false,
-      iconos: ['StarIcon','LoopyStrokeIcon',]
+      starScale: 1,
+      iconos: ['StarIcon','Html',
+        'WavyLineIcon', 'WavyLineIcon2','WavyLineIcon3','WavyLineIcon4',
+      ]
     },
    {  nombre: '',
       gusto: true,
-      iconos: ['StarIcon','Python', 'ZigzagIcon', 'LoopyStrokeIcon',]
+      starScale: 1,
+      iconos: ['StarIcon','Python', 'CSS', 'Html',
+        'WavyLineIcon', 'WavyLineIcon2','WavyLineIcon3','WavyLineIcon4',
+      ]
     },
 
    {  nombre: '',
       gusto: false,
-      iconos: ['StarIcon','Python', 'LoopyStrokeIcon',]
+      starScale: 1,
+      iconos: ['StarIcon','Python', 'Html',
+        'WavyLineIcon', 'WavyLineIcon2','WavyLineIcon3','WavyLineIcon4',
+      ]
     },
    {  nombre: '',
       gusto: true,
-      iconos: ['StarIcon','Python',]
+      starScale: 1,
+      iconos: ['StarIcon','Python',
+        'WavyLineIcon', 'WavyLineIcon2','WavyLineIcon3','WavyLineIcon4',
+      ]
     },
 
    {  nombre: '',
       gusto: false,
-      iconos: ['StarIcon','Python', 'AbstractBlobIcon']
+      starScale: 1,
+      iconos: ['StarIcon','Python', 'Cmasmas',
+        'WavyLineIcon', 'WavyLineIcon2','WavyLineIcon3','WavyLineIcon4',
+      ]
     },
    {  nombre: '',
       gusto: true,
-      iconos: ['StarIcon','Python', 'C']
+      starScale: 1,
+      iconos: ['StarIcon','Python', 'C',
+        'WavyLineIcon', 'WavyLineIcon2','WavyLineIcon3','WavyLineIcon4',
+      ]
     },
 
    {  nombre: '',
       gusto: false,
-      iconos: ['StarIcon','C']
+      starScale: 1,
+      iconos: ['StarIcon','C',
+        'WavyLineIcon', 'WavyLineIcon2','WavyLineIcon3','WavyLineIcon4',
+      ]
+    },
+
+]
+let todos2 = [
+   {  nombre: 'Spotify Skip',
+      gusto: true,
+      starScale: max_size,
+      iconos: ['StarIcon','JavaScript', 'CSS', 'Svelte',
+        'WavyLineIcon', 'WavyLineIcon2','WavyLineIcon3','WavyLineIcon4',
+      ]
+    },
+
+   {  nombre: '',
+      gusto: false,
+      starScale: max_size,
+      iconos: ['StarIcon','Html',
+        'WavyLineIcon', 'WavyLineIcon2','WavyLineIcon3','WavyLineIcon4',
+      ]
+    },
+   {  nombre: '',
+      gusto: true,
+      starScale: max_size,
+      iconos: ['StarIcon','Python', 'CSS', 'Html',
+        'WavyLineIcon', 'WavyLineIcon2','WavyLineIcon3','WavyLineIcon4',
+      ]
+    },
+
+   {  nombre: '',
+      gusto: false,
+      starScale: max_size,
+      iconos: ['StarIcon','Python', 'Html',
+        'WavyLineIcon', 'WavyLineIcon2','WavyLineIcon3','WavyLineIcon4',
+      ]
+    },
+   {  nombre: '',
+      gusto: true,
+      starScale: max_size,
+      iconos: ['StarIcon','Python',
+        'WavyLineIcon', 'WavyLineIcon2','WavyLineIcon3','WavyLineIcon4',
+      ]
+    },
+
+   {  nombre: '',
+      gusto: false,
+      starScale: max_size,
+      iconos: ['StarIcon','Python', 'Cmasmas',
+        'WavyLineIcon', 'WavyLineIcon2','WavyLineIcon3','WavyLineIcon4',
+      ]
+    },
+   {  nombre: '',
+      gusto: true,
+      starScale: max_size,
+      iconos: ['StarIcon','Python', 'C',
+        'WavyLineIcon', 'WavyLineIcon2','WavyLineIcon3','WavyLineIcon4',
+      ]
+    },
+
+   {  nombre: '',
+      gusto: false,
+      starScale: max_size,
+      iconos: ['StarIcon','C',
+        'WavyLineIcon', 'WavyLineIcon2','WavyLineIcon3','WavyLineIcon4',
+      ]
     },
 
 ]
 
 
-    
+ const max_size = 1.6   
  const baseIconSize = 50;  // for example, 50px base size
    
 </script>
@@ -116,14 +213,13 @@ let todos = [
   <h1 class="title">Todos Repos Posibles</h1>
   <div class="cajas">
     {#each todos as t}
-        <div class="colab-box-BIG" style="border-color: {t.gusto ? 'limegreen' : 'deeppink'}">
-          <div class="icon-layer-BIG">
-
-           {#each t.iconos as nombre}
+      <div class="colab-box-BIG" style="border-color: {t.gusto ? 'limegreen' : 'deeppink'}">
+        <div class="icon-layer-BIG">
+          {#each t.iconos as nombre}
             {#if iconComponents[nombre] && iconLayout[nombre]}
               <svelte:component
                 this={iconComponents[nombre]}
-                size={baseIconSize * iconLayout[nombre].scale}
+                size={baseIconSize * iconLayout[nombre].scale * (nombre === 'StarIcon' ? t.starScale : 1)}
                 class="icon-item-BIG"
                 style={`position: absolute;
                         left: ${iconLayout[nombre].x};
@@ -134,23 +230,50 @@ let todos = [
               />
             {/if}
           {/each}
-
-          </div>
         </div>
+      </div>
       {/each}
-  </div>
+    </div>
+
+    <h1 class="title">Estrella grande</h1>
+  <div class="cajas">
+    {#each todos2 as t}
+      <div class="colab-box-BIG" style="border-color: {t.gusto ? 'limegreen' : 'deeppink'}">
+        <div class="icon-layer-BIG">
+          {#each t.iconos as nombre}
+          {#if iconComponents[nombre] && iconLayout[nombre]}
+          <svelte:component
+                this={iconComponents[nombre]}
+                size={baseIconSize * iconLayout[nombre].scale * (nombre === 'StarIcon' ? t.starScale : 1)}
+                class="icon-item-BIG"
+                style={`position: absolute;
+                        left: ${iconLayout[nombre].x};
+                        top: ${iconLayout[nombre].y};
+                        transform: translate(-50%, -50%);
+                        z-index: ${iconLayout[nombre].zIndex ?? 0};
+                        pointer-events: none;`}
+              />
+            {/if}
+          {/each}
+        </div>
+      </div>
+      {/each}
+    </div>
+      
+  
+
 
   <h2 class="subtitulo">Leyenda de íconos</h2>
   <div class="leyenda">
-    <div><WavyLineIcon height={60} color="#e76f51" /> <span>Cantidad de líneas segun intervalo de peso </span></div>
-    <div><StarIcon size={40} color="#d673ec" /> <span>Commits, tamaño según cantidad </span></div>
-    <div><LoopyStrokeIcon size={40} color1="#8bc34a"  /> <span>HTML</span></div>
-    <div><Python size={40} color="#00897b" /> <span>Python</span></div>
-    <div><SpiralIcon size={40} color="#ffd97d" /> <span>JavaScript</span></div>
-    <div><AbstractBlobIcon size={40} color1="#cceeff"  /> <span>C++</span></div>
-    <div><C size={40} color="#ff9900" /> <span>C</span></div>
-    <div><BrushZIcon size={40} color="#a142e0" /> <span>Svelte</span></div>
-    <div><ZigzagIcon size={40} color="#bfaeff" /> <span>CSS</span></div>
+    <div><WavyLineIcon height={100}, size={100}   /> <span>Cantidad de líneas segun intervalo de peso </span></div>
+    <div><StarIcon size={80}  /> <span>Commits, tamaño según cantidad </span></div>
+    <div><Html size={80}  /> <span>HTML</span></div>
+    <div><Python size={80}  /> <span>Python</span></div>
+    <div><JavaScript size={80} /> <span>JavaScript</span></div>
+    <div><Cmasmas size={80}  /> <span>C++</span></div>
+    <div><C size={80}  /> <span>C</span></div>
+    <div><Svelte size={80} /> <span>Svelte</span></div>
+    <div><CSS size={80}  /> <span>CSS</span></div>
   </div>
 
   <footer class="footer">

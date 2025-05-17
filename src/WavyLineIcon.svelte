@@ -26,7 +26,7 @@
          Q 0 255, 10 270
          Q 20 285, 10 300"
       stroke={color}
-      stroke-width="10"
+      stroke-width="6"
       stroke-linecap="round"
       fill="none"
     />
